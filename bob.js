@@ -1,16 +1,19 @@
 /* eslint-disable no-unused-vars */
-//
-// This is only a SKELETON file for the 'Bob' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
 
-class Bob {
-  hey(message) {
-    //
-    // YOUR CODE GOES HERE
-    //
+export default function Bob() {
+  this.hey = function(message) {
+    if(message == message.toUpperCase() && containsLetters(message)) {
+      return "Whoa, chill out!"
+    } else if(message.charAt(message.length - 1) == "?") {
+      return "Sure."
+    } else if(message.trim() == "") {
+      return "Fine. Be that way!"
+    } else {
+      return "Whatever."
+    }
+  }
+
+  function containsLetters(message) {
+    return /[a-zA-Z]/.test(message)
   }
 }
-
-export default Bob;
-
